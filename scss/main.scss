@@ -1,0 +1,421 @@
+@import "./variable";
+@import "./reset";
+@import "./mixin";
+
+h1 {
+    font-size: 2rem;
+}
+h2 {
+    font-size: 1.75rem;
+}
+h3 {
+    font-size: 1.5rem;
+}
+h1,
+h2,
+h3 {
+    color: var(--darkGrayishBlue);
+}
+p {
+    line-height: 1.75em;
+    color: var(--grayishBlue);
+}
+
+.hold {
+    width: 80%;
+    margin: 0 auto;
+
+    @include medium() {
+        text-align: center;
+    }
+}
+.btn {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: var(--strongCyan);
+    color: #fff;
+    border: none;
+    border-bottom: 0.2em solid hsl(171, 30%, 44%);
+    border-radius: 2rem;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.75;
+    }
+
+    &1 {
+        @extend .btn;
+        background-color: hsl(233, 100%, 69%);
+        border-bottom-color: hsl(233, 100%, 65%);
+    }
+}
+
+// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+// ----- ----- ----- ----- ----- Intro ----- ----- ----- ----- -----
+// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+.intro {
+    padding: 8rem 0 4rem 0;
+    background-image: url("../images/bg-header-desktop.png");
+    background-repeat: no-repeat;
+
+    .hold {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h1 {
+        margin-top: 2rem;
+    }
+    p {
+        max-width: 60ch;
+        margin-top: 0.8rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.05rem;
+        text-align: center;
+    }
+
+    &Btns {
+        display: flex;
+        flex-wrap: wrap;
+        button {
+            margin: 0.5rem;
+        }
+    }
+
+    //
+    //
+    //
+    @include medium() {
+        &Btns {
+            justify-content: center;
+        }
+    }
+}
+
+// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+// ----- ----- ----- ----- ----- Snip ----- ----- ----- ----- -----
+// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+.snip {
+    padding: 4rem 0;
+
+    .hold {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &Head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h2 {
+            margin-top: 2rem;
+        }
+        p {
+            max-width: 67.5ch;
+            margin-top: 0.8rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+    }
+
+    &Foot {
+        width: 100%;
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+    }
+    &Img {
+        width: 60%;
+        object-fit: contain;
+        transform: translateX(-15%);
+    }
+    &Txt {
+        width: 40%;
+        display: grid;
+        grid-template: repeat(3, auto) / 1fr;
+        grid-gap: 2.5rem;
+    }
+    &Item {
+        p {
+            max-width: 37.5ch;
+            margin-top: 0.6em;
+            line-height: 1.6em;
+        }
+    }
+
+    //
+    //
+    //
+    @include medium() {
+        &Foot {
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 2rem;
+            flex-direction: column;
+        }
+        &Img {
+            width: 100%;
+            transform: translateX(0);
+        }
+        &Txt {
+            margin-top: 4rem;
+            width: 100%;
+        }
+        &Item {
+            text-align: center;
+            p {
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+// ----- ----- ----- ----- ----- Access ----- ----- ----- ----- -----
+// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+.access {
+    padding: 4rem 0;
+
+    .hold {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &Head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h2 {
+            margin-top: 2rem;
+        }
+        p {
+            max-width: 67.5ch;
+            margin-top: 0.8rem;
+            margin-bottom: 4rem;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+    }
+
+    img {
+        max-width: 100%;
+        object-fit: contain;
+    }
+}
+
+// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+// ----- ----- ----- ----- ----- Workflow ----- ----- ----- ----- -----
+// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+.workflow {
+    padding: 4rem 0;
+
+    .hold {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &Head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h2 {
+            margin-top: 2rem;
+        }
+        p {
+            max-width: 67.5ch;
+            margin-top: 0.8rem;
+            margin-bottom: 4rem;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+    }
+
+    &Foot {
+        margin-top: 2rem;
+        display: grid;
+        grid-gap: 2rem;
+        grid-template: 1fr / repeat(3, 1fr);
+    }
+
+    &Item {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            max-width: 40ch;
+            line-height: 1.5em;
+        }
+        img {
+            height: 2.5rem;
+            object-fit: contain;
+        }
+    }
+
+    //
+    //
+    //
+    @include medium() {
+        &Foot {
+            grid-template: repeat(3, auto) / 1fr;
+        }
+        &Item {
+            text-align: center;
+            p {
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+// ----- ----- ----- ----- ----- Ads ----- ----- ----- ----- -----
+// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+.ads {
+    padding: 4rem 0;
+
+    .hold {
+        display: grid;
+        grid-gap: 5rem;
+        grid-template: 1fr / repeat(5, 1fr);
+        place-items: center;
+    }
+    img {
+        max-width: 10rem;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    //
+    //
+    //
+    @include medium() {
+        .hold {
+            grid-template: repeat(3, 1fr) / 1fr;
+        }
+    }
+}
+
+// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+// ----- ----- ----- ----- ----- Download ----- ----- ----- ----- -----
+// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+.download {
+    padding: 8rem 0 4rem 0;
+
+    .hold {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h1 {
+        margin-top: 2rem;
+    }
+    p {
+        max-width: 60ch;
+        margin-top: 0.8rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.05rem;
+        text-align: center;
+    }
+
+    &Btns {
+        display: flex;
+        flex-wrap: wrap;
+        button {
+            margin: 0.5rem;
+        }
+    }
+
+    //
+    //
+    //
+    @include medium() {
+        &Btns {
+            justify-content: center;
+        }
+    }
+}
+
+// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+// ----- ----- ----- ----- ----- Foot ----- ----- ----- ----- -----
+// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+.foot {
+    margin-top: 8rem;
+    padding: 2rem 0;
+    background: hsl(201, 20%, 95%);
+
+    .hold {
+        display: grid;
+        grid-gap: 2rem;
+        grid-template: 1fr / auto 1fr auto;
+        place-items: center;
+    }
+    img {
+        width: 3rem;
+        object-fit: contain;
+    }
+
+    &Links {
+        display: grid;
+        grid-gap: 1rem 5rem;
+        grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+
+        a {
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--darkGrayishBlue);
+
+            &:hover {
+                color: var(--strongCyan);
+            }
+        }
+    }
+    &Medias {
+        display: grid;
+        grid-gap: 2rem;
+        grid-template: auto / repeat(3, auto);
+
+        img {
+            width: 1.5rem;
+        }
+    }
+
+    //
+    //
+    //
+    @include medium() {
+        .hold {
+            text-align: center;
+            grid-gap: 3rem;
+            grid-template: auto 1fr auto / 1fr;
+        }
+
+        &Links {
+            grid-gap: 1rem;
+            grid-template: repeat(5, 1fr) / 1fr;
+        }
+    }
+}
